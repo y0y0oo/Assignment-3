@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/swiper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+</head>
+
+<body id="homePage">
+<header>
+    <div class="nav">
+        <div class="nav_item nav_muji">
+            <a href="home.html"></a>
+        </div>
+        <div class="nav_item">
+            <a href="./about.html">About</a>
+        </div>
+        <div class="nav_item">
+            <a href="portfolio.html">Portfolio</a>
+        </div>
+        <!--<div class="nav_item">
+            <a href="javascript:;">Philosophy</a>
+        </div>
+        <div class="nav_item">
+            <a href="javascript:;">Contact</a>
+        </div>-->
+        <div class="float_nav">
+            <div class="hide_menu hide"></div>
+            <div class="float_menu ">
+                <span class="float_menu_item">branding.</span>
+                <span class="float_menu_item">advertising.</span>
+                <span class="float_menu_item">exhibition.</span>
+                <!--<span class="float_menu_item">graphic.</span>-->
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="home_banner">
+    <iframe
+            src="https://www.youtube.com/embed/sVOq-6g0nIQ?autoplay=1&mute=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+    </iframe>
+    <div class="title">原 研哉 | Kenya HARA</div>
+</section>
+
+<section class="home_white section_banner portfolio_banner section_portfolio">
+    <div class="title Top">White is not a color, but a feeling of whiteness.</div>
+    <!-- 添加外层容器并复制图片 -->
+    <div class="carousel-container">
+        <div class="imgs">
+            <img src="static/images/home/name_thumb_yoko-2.jpg">
+            <img src="static/images/home/motsignage_thumb_yoko.jpg">
+            <img src="static/images/home/kusama-museum-2017_thumb_tate-1.jpg">
+            <img src="static/images/home/asahi-lapunta-2016_thumb_yoko.jpg">
+            <!-- 复制同样的一组图片实现无缝衔接 -->
+            <img src="static/images/home/name_thumb_yoko-2.jpg">
+            <img src="static/images/home/motsignage_thumb_yoko.jpg">
+            <img src="static/images/home/kusama-museum-2017_thumb_tate-1.jpg">
+            <img src="static/images/home/asahi-lapunta-2016_thumb_yoko.jpg">
+        </div>
+    </div>
+
+    <style>
+        .carousel-container {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .imgs {
+            display: flex;
+            width: 200%;
+            animation: slide 20s linear infinite;
+            position: relative;
+        }
+
+        .imgs img {
+            width: 25%;
+            height: 31rem;
+            object-fit: cover;
+            object-position: center;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-container::before {
+            left: 0;
+            background: linear-gradient(to right, white 0%, transparent 100%);
+        }
+        .carousel-container::after {
+            right: 0;
+            background: linear-gradient(to left, white 0%, transparent 100%);
+        }
+    </style>
+
+    <div class="title Bottom">Design is a translator of culture and emotion.</div>
+</section>
+
+<section class="home_about">
+    <div class="left">
+        <div>
+            <div class="title">About.</div>
+            <p class="homeLeftP">
+                Kenya Hara is a Japanese graphic designer, curator and writer, He is a graduate of Musashino Art University, Hara is employed by Musashino Art University asprofessor, and taught Communication Design and Design Theory in Science onDesign Faculty since April 2003.
+            </p>
+        </div>
+
+        <div class="see_more">
+            <span onclick="window.location='about.html'">See More -></span>
+        </div>
+    </div>
+
+    <div class="right">
+        <img src="static/images/home/63bf61e236a47cd146e06d62_name=043_Hara_Kenya.jpg">
+    </div>
+</section>
+
+<section class="home_portfolio">
+    <div class="title">Portfolio.</div>
+
+    <div class="imgs_wall">
+        <div class="item"><img src="static/images/home/ccc-sengu-2017_thumb_yoko.jpg"></div>
+        <div class="item"><img src="static/images/home/ndc-stone-2018_thumb_tate.jpg"></div>
+        <div class="item"><img src="static/images/home/ccc-sengu-2017_thumb_yoko.jpg"></div>
+        <div class="item"><img src="static/images/home/avanti-pristine-2016_thumb_yoko.jpg"></div>
+        <div class="item"><img src="static/images/home/mujihotel-2018_thumb_tate-1.jpg"></div>
+        <div class="item"><img src="static/images/home/teasure-2017_thumb_tate-2.jpg"></div>
+        <div class="item"><img src="static/images/home/avanti-pristine-2016_thumb_yoko.jpg"></div>
+    </div>
+
+    <script>
+        function startAutoPlay() {
+            setInterval(() => {
+                let items = document.querySelectorAll('.item');
+                document.querySelector('.imgs_wall').appendChild(items[0]);
+            }, 3000);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            startAutoPlay();
+        });
+    </script>
+
+    <div class="see_more">
+        <span onclick="window.location='portfolio.html'">See More -></span>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const style = document.createElement('style');
+        style.textContent = `
+        .title, .homeLeftP,
+        .home_about .right img,
+        .imgs_wall .item,
+        .carousel-container .imgs img {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+            visibility: hidden;
+        }
+        .title.show, .homeLeftP.show,
+        .home_about .right img.show,
+        .imgs_wall .item.show,
+        .carousel-container .imgs img.show {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+    `;
+        document.head.appendChild(style);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.25,
+            trackVisibility: true,
+            delay: 100
+        });
+
+        const targets = document.querySelectorAll(`
+        .title, .homeLeftP,
+        .home_about .right img,
+        .imgs_wall .item,
+        .carousel-container .imgs img
+    `);
+
+        targets.forEach(target => {
+            target.style.visibility = 'visible';
+            observer.observe(target);
+        });
+
+        const mutationObserver = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === 1 && (
+                        node.matches('.item') ||
+                        node.matches('.imgs img')
+                    )) {
+                        node.style.visibility = 'visible';
+                        observer.observe(node);
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('.imgs_wall, .carousel-container').forEach(container => {
+            mutationObserver.observe(container, {
+                childList: true,
+                subtree: true
+            });
+        });
+    });
+</script>
+</body>
+</html>

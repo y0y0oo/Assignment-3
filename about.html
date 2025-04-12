@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUJI</title>
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+</head>
+
+<body style="overflow-x: hidden">
+  <header>
+    <div class="nav">
+        <div class="nav_item nav_muji">
+            <a href="home.html"></a>
+        </div>
+        <div class="nav_item active">
+            <a href="javascript:;">About</a>
+        </div>
+        <div class="nav_item">
+            <a href="./portfolio.html">Portfolio</a>
+        </div>
+        <!--<div class="nav_item">
+            <a href="javascript:;">Philosophy</a>
+        </div>
+        <div class="nav_item">
+            <a href="javascript:;">Contact</a>
+        </div>-->
+    </div>
+  </header>
+
+  <section class="section_top section_banner section_about section_scroll">    
+    <div class="top_left">
+        <div class="top_left_tit title-an">
+            <span>ABOUT.</span>
+        </div>
+        <div class="top_left_info">
+            <div class="info_txt">
+                <div class="info_left_txt">
+                    <span class="author-an" style="opacity: 0">原 研哉｜Kenya HARA</span>
+                    <p class="p-an" style="opacity: 0">Designer, Kenya Hara (b.1958) emphasizes</p>
+                    <p class="p-an" style="opacity: 0">the design of both objects and experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top_right">
+        <div class="info_img">
+            <div class="info_right_txt">
+                <p>Current position:</p>
+                <p>Representative Director of Nippon Design Center.</p>
+                <p>Professor of Musashino Art University.</p>
+                <p>Art Director of MUJI (2002-present).</p>
+            </div>
+
+            <div class="smallImg-box">
+                <img class="smallImg-an" style="opacity: 0" src="./static/images/about/1.png" alt="">
+                <div class="overlay"></div>
+                <div class="overlay2"></div>
+            </div>
+        </div>
+        <img class="bg-an" style="opacity: 0" src="./static/images/about/2.png" alt="">
+    </div>
+  </section>
+
+  <section class="section_about section_about1 section_scroll">
+    <div class="about_txt ">
+        <p>In 2000, he produced the exhibition "RE-DESIGN--Daily Products of the 21st Century", which successfully presented the fact that the resources of astonishing design are found in the context of the very ordinary and casual. In 2002, Hara became a member of MUJI's advisory board and began acting as its art director. In 2004, he planned and directed the exhibition "HAPTIC - Awakening the Senses" revealing to the audience that great resources of design are dormant in the human senses. </p>
+        <p>Much of his work, including the programs for the Opening and Closing Ceremonies of the Nagano Winter Olympic Games and Expo 2005 is deeply rooted in Japanese culture. In 2007 and 2009, he produced two exhibitions titled "TOKYO FIBER -- SENSEWARE" in Paris, Milan and Tokyo, and from 2008 through 2009, the exhibition "JAPAN CAR" in Paris and at the Science Museum in London. Hara's focus in these kinds of exhibitions is on visualizing and widely disseminating the potentiality of industry. The radius of his activity has been expanding to the rest of Asia as well, including the traveling exhibition "DESIGNING DESIGN Kenya Hara 2011 China Exhibition" that starts in Beijing in 2011. </p>
+        <p>Several books authored by Hara, including Designing Design and White, have been translated into a number of languages, including other Asian languages.</p>
+    </div>
+    <div class="about_img">
+        <img src="./static/images/about/3.jpg" alt="">
+    </div>
+  </section>
+
+  <section class="section_about section_about2 section_scroll">
+    
+    <div class="about_img">
+        <img src="./static/images/about/4.png" alt="">
+    </div>
+    <div class="about_txt ">
+        <p>Hara Design Institute is a design think tank.While we continue to soundly function as an orthodox design officeoffering solutions to clients, we'll place equal importanceon proposing possible design projects based on our observationsof society and the world that will lead us to the discovery of new problems to be solved.While the media environment is changing, communication methodsand the meaning and role of design will undergo drastic change as well.We work in all possible media and fields, bringing in outside talent and technologies when necessary.Whether graphic design, architecture, products, websites, books, exhibitions,hotel direction, urban systems or navigation design, we provide solid, quality solutions.If our site brings a possibility to mind, please don't hesitate to contact us.We're happy to work with any kind of organization on any type of project.Note: Hara Design Institute has a staff of 20, including Kenya Hara.Every project here begins with vision sharing among all.</p>
+    </div>
+  </section>
+
+  <section class="section_about section_about_img">
+    <img src="./static/images/about/5.png" alt="">
+  </section>
+
+<script>
+    const bannerDom = document.querySelector('.section_banner');
+    setTimeout(function(
+    ){
+        bannerDom.classList.add('scroll_show')
+        },500)
+
+
+
+        
+    const scrollLoad = document.querySelectorAll('.section_scroll');
+        // nav
+        window.addEventListener('scroll', function() {
+            console.log(scrollLoad)
+            scrollLoad.forEach((dom )=> {
+                console.log(12322)
+                isScrollAtTo(dom)
+            });
+        });
+
+                
+    function isScrollAtTo(dom) {
+        let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        let scrollValue = scrollTop ;  
+        let clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        console.log(dom,scrollValue,dom.offsetTop,dom.offsetHeight)
+        console.log(clientWidth)
+        if(clientWidth > 630){
+            if (scrollValue> (dom.offsetTop - clientHeight + 300)){
+            dom.classList.add('scroll_show')
+            }
+        }else{
+            if ((scrollValue + clientHeight)> (dom.offsetTop + 50)){
+            dom.classList.add('scroll_show')
+            }
+        }
+        return false
+    }
+</script>
+
+
+</body>
+</html>
